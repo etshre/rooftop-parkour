@@ -3,7 +3,7 @@ from game_settings import *
 
 class Player:
     def __init__(self):
-        self.image = pygame.Surface((40, 60))
+        self.image = pygame.image.load('idle.png').convert_alpha
         self.image.fill((200, 50, 50))
         self.rect = self.image.get_rect()
         self.rect.x = 100
