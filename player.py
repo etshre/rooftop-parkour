@@ -3,7 +3,7 @@ from settings import *
 
 class Player:
     def __init__(self):
-        self.image = pygame.image.load('idle.png').convert_alpha
+        self.image = pygame.image.load('assets', 'idle.png').convert_alpha
         self.image.fill((200, 50, 50))
         self.rect = self.image.get_rect()
         self.rect.x = 100
