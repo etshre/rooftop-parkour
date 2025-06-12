@@ -1,5 +1,5 @@
 import pygame
-from game_settings import WIDTH, HEIGHT, BG_COLOR
+from settings import WIDTH, HEIGHT, BG_COLOR
 from platforms import Platform
 from player import Player
 from level import Level

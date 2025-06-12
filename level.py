@@ -1,6 +1,6 @@
 import random
 from platforms import Platform
-from game_settings import *
+from settings import *
 
 class Level:
     def __init__(self):
