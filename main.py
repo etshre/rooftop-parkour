@@ -1,6 +1,7 @@
 import pygame
+import sys
 from settings import WIDTH, HEIGHT, BG_COLOR
-from platforms import Platform
+from scripts.platforms import Platform
 from player import Player
 from level import Level
 
@@ -13,13 +14,13 @@ level = Level()
 
 running = True
 while running:
-    dt = clock.tick(60) / 1000  # Delta time for consistent movement
+    dt = clock.tick(60) / 1000  # Delta time in seconds
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    player.update(level.platforms)
-    level.update()
+    player.update(level.platforms, dt)  # Pass dt to update
+    level.update(dt)                    # Pass dt to update
 
     screen.fill(BG_COLOR)
     level.draw(screen)
@@ -27,3 +28,4 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
+sys.exit()

@@ -1,5 +1,5 @@
 import random
-from platforms import Platform
+from scripts.platforms import Platform
 from settings import *
 
 class Level:
@@ -9,15 +9,15 @@ class Level:
         self.spawn_delay = 2  # seconds
         self.scroll_speed = 200  # pixels/sec
 
-    def update(self):
+    def update(self, dt):
         for platform in self.platforms:
-            platform.update(self.scroll_speed * 1/60)
+            platform.update(self.scroll_speed * dt)
 
         # Remove platforms that are off-screen
         self.platforms = [p for p in self.platforms if p.rect.right > 0]
 
         # Spawn new platforms
-        self.timer += 1/60
+        self.timer += dt
         if self.timer >= self.spawn_delay:
             self.timer = 0
             last_y = self.platforms[-1].rect.y
