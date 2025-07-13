@@ -1,5 +1,4 @@
-# rooftop-parkour
-<title> infinite scroller </title>
+# infinite-scroller
 
 <h1>Hello!!! This is a game made the Athena Award. This is my second game made using pygame, so I hope it works and that you enjoy</h1>
 
